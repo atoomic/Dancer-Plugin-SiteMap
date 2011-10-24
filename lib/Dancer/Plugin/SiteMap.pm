@@ -1,6 +1,12 @@
 package Dancer::Plugin::SiteMap;
-
 use strict;
+use warnings;
+
+BEGIN {
+  $Dancer::Plugin::SiteMap::VERSION = '0.07';
+}
+# ABSTRACT: Dancer plugin to generate a site map ( mainly used by Google ).
+
 use Dancer qw(:syntax);
 use Dancer::Plugin;
 use XML::Simple;
@@ -9,13 +15,8 @@ use XML::Simple;
 
 Dancer::Plugin::SiteMap - Automated site map for the Dancer web framework.
 
-=head1 VERSION
-
-Version 0.06
-
 =cut
 
-our $VERSION     = '0.07';
 my  $OMIT_ROUTES = []; 
 
 # Add syntactic sugar for omitting routes.
