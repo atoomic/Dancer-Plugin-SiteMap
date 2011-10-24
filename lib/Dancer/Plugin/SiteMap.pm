@@ -1,7 +1,7 @@
-package Dancer::Plugin::SiteMap;
 use strict;
 use warnings;
 
+package Dancer::Plugin::SiteMap;
 use Dancer qw(:syntax);
 use Dancer::Plugin;
 use XML::Simple;
