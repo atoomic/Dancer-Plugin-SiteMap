@@ -2,14 +2,14 @@ package Dancer::Plugin::SiteMap;
 use strict;
 use warnings;
 
+use Dancer qw(:syntax);
+use Dancer::Plugin;
+use XML::Simple;
+
 BEGIN {
   $Dancer::Plugin::SiteMap::VERSION = '0.07';
 }
 # ABSTRACT: Dancer plugin to generate a site map ( mainly used by Google ).
-
-use Dancer qw(:syntax);
-use Dancer::Plugin;
-use XML::Simple;
 
 =head1 NAME
 
@@ -143,7 +143,8 @@ sub _retreive_get_urls {
         }
     }
 
-    return sort(@urls);
+    my @sorted_urls = sort(@urls);
+    return @sorted_urls;
 };
 
 
